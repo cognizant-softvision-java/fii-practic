@@ -1,2 +1,9 @@
-package com.cognizant;public class AppConfig {
+package com.cognizant;
+
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+@ComponentScan
+public class AppConfig {
 }
