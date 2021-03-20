@@ -1,5 +1,6 @@
 package org.fiipractic.service;
 
+import org.fiipractic.exception.NotFoundException;
 import org.fiipractic.model.User;
 import org.springframework.stereotype.Component;
 
@@ -33,6 +34,13 @@ public class UserService {
                 .filter(user -> user.getUserName().equals(userName))
                 .findFirst()
                 .orElse(null);
+    }
+
+    public User findById(Long id) {
+        return users.stream()
+                .filter(user -> user.getId().equals(id))
+                .findFirst()
+                .orElseThrow(() -> new NotFoundException("user", id));
     }
 
 }

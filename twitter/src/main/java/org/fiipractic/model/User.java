@@ -1,11 +1,15 @@
 package org.fiipractic.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 public class User {
     Long id;
     String userName;
     String firstName;
     String lastName;
     String email;
+
+    @JsonIgnore
     String pass;
 
     public User() {
