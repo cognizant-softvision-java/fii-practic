@@ -1,11 +1,24 @@
 package org.fiipractic.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "person")
 public class User {
+    @Id
     Long id;
+    @Column(name = "USER_NAME")
     String userName;
+    @Column(name = "FIRST_NAME")
     String firstName;
+    @Column(name = "LAST_NAME")
     String lastName;
+    @Column(name = "EMAIL")
     String email;
+    @Column(name="PASSW")
     String pass;
 
     public User() {
