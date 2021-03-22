@@ -1,0 +1,5 @@
+org/fiipractic/service/UserService.class
+org/fiipractic/controller/UserController.class
+org/fiipractic/config/WebConfig.class
+org/fiipractic/config/MyWebAppInitializer.class
+org/fiipractic/model/User.class

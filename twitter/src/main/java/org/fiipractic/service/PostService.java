@@ -6,14 +6,18 @@ import org.fiipractic.repository.PostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+<<<<<<< HEAD
 import java.util.List;
 
+=======
+>>>>>>> 097509778aa3205f7c132c9e56aaef09d9843ba7
 @Service
 public class PostService {
 
     @Autowired
     private PostRepository postRepository;
 
+<<<<<<< HEAD
     @Autowired
     private UserService userService;
 
@@ -32,5 +36,9 @@ public class PostService {
 
     public List<Post> getAllPosts() {
         return postRepository.getPosts();
+=======
+    public Long createPost(PostDTO post){
+        postRepository.addPost(post);
+>>>>>>> 097509778aa3205f7c132c9e56aaef09d9843ba7
     }
 }
