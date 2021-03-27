@@ -1,3 +1,5 @@
+package unit;
+
 import org.fiipractic.dto.PostDTO;
 import org.fiipractic.exception.NotFoundException;
 import org.fiipractic.model.Post;
@@ -25,10 +27,10 @@ public class PostServiceTest {
     private PostService postService;
 
     @Spy
-    private PostRepository postRepository;
+    private PostRepository postRepository = new PostRepository();
 
     @Spy
-    private UserService userService;
+    private UserService userService = new UserService();
 
     private static User author;
     private static PostDTO postDTO;
