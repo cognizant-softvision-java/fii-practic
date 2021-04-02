@@ -18,19 +18,18 @@ public class Application {
         tomcat.setPort(8080);
 
         Context rootCtx = tomcat.addContext("", base.getAbsolutePath());
-        AnnotationConfigWebApplicationContext aactx = new AnnotationConfigWebApplicationContext();
-        aactx.register(WebConfig.class);
+        AnnotationConfigWebApplicationContext annotationContext = new AnnotationConfigWebApplicationContext();
+        annotationContext.register(WebConfig.class);
 
-        DispatcherServlet dispatcher = new DispatcherServlet(aactx);
+        DispatcherServlet dispatcher = new DispatcherServlet(annotationContext);
         Tomcat.addServlet(rootCtx, "SpringMVCDispatcher", dispatcher);
         rootCtx.addServletMapping("/", "SpringMVCDispatcher");
 
         Wrapper jspServlet = rootCtx.createWrapper();
         jspServlet.setName("jsp");
         jspServlet.setServletClass("org.apache.jasper.servlet.JspServlet");
-        jspServlet.addInitParameter("fork", "false");
-        jspServlet.addInitParameter("xpoweredBy", "false");
         jspServlet.setLoadOnStartup(2);
+
         rootCtx.addChild(jspServlet);
         rootCtx.addServletMapping("*.jsp", "jsp");
         rootCtx.addServletContainerInitializer(new JasperInitializer(), null);
