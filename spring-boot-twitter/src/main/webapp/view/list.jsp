@@ -14,6 +14,7 @@
                 <th>Email</th>
                 <th>Username</th>
                 <th>Password</th>
+                <th>Following</th>
                 <c:forEach items="${users}" var="user">
                     <tr>
                         <td>${user.id}</td>
@@ -22,6 +23,7 @@
                         <td>${user.email}</td>
                         <td>${user.userName}</td>
                         <td>${user.pass}</td>
+                        <td>${user.following}
                     </tr>
                 </c:forEach>
             </table>
